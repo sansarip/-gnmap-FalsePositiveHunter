@@ -1,5 +1,5 @@
 # FalsePositiveHunter
-Have you ver wanted to get rid of those pesky ~6500  port false positives from your gnmap file?
+Have you ever wanted to get rid of those pesky ~6500  port false positives from your gnmap file?
 
 Use this tool to sort through your gnmap file and get rid of potential false positives.
 
