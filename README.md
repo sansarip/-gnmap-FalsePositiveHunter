@@ -14,4 +14,4 @@ Flags:
 -ex (include only hosts exceeding the limit in your output file)
 
 Example:
-python FPH.py -i file.gnmap -l 1000 -ex -0 file.gnmap
+python FPH.py -i file.gnmap -l 1000 -ex -o file.gnmap
