@@ -6,7 +6,7 @@ parser.add_argument("-i", help="type input file name")
 parser.add_argument("-l", help="limit: amount of ports open to qualify as false positive")
 parser.add_argument("-ex", action = 'store_true', help="outputs file with only those hosts that exceeded port limit")
 parser.add_argument("-inc", action ='store_false', help="outputs file with only those hosts that were within port limit")
-parser.add_argument("-noStat", action='store_true', help="for elmiminated hosts, get rid of \"status up\"")
+parser.add_argument("-noStat", action='store_true', help="get rid of \"status up\"")
 args = parser.parse_args()                                                                                              # parameters passed in after flag
 hostList = []
 splitHost = []
