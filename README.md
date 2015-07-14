@@ -13,7 +13,7 @@ Flags:
 -inc (include only hosts within the limit in your output file)
 -ex (include only hosts exceeding the limit in your output file)
 ________________________________________________________________________________________________________________________________
--i -o -l are required parameters| by default, -inc is selected
+-i -o -l are required parameters | by default, -inc is selected
 ________________________________________________________________________________________________________________________________
 
 
