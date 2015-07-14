@@ -12,6 +12,10 @@ Flags:
 -l (port limit)
 -inc (include only hosts within the limit in your output file)
 -ex (include only hosts exceeding the limit in your output file)
+________________________________________________________________________________________________________________________________
+-i -o -l are required parameters| by default, -inc is selected
+________________________________________________________________________________________________________________________________
+
 
 Example:
 python FPH.py -i file.gnmap -l 1000 -ex -o file.gnmap
