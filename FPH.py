@@ -5,7 +5,8 @@ parser.add_argument("-o", help="type output file name")
 parser.add_argument("-i", help="type input file name")
 parser.add_argument("-l", help="limit: amount of ports open to qualify as false positive")
 parser.add_argument("-ex", action = 'store_true', help="outputs file with only those hosts that exceeded port limit")
-parser.add_argument("-inc", action ='store_true', help="outputs file with only those hosts that were within port limit")
+parser.add_argument("-inc", action ='store_false', help="outputs file with only those hosts that were within port limit")
+parser.add_argument("-noStat", action='store_true', help="for elmiminated hosts, get rid of \"status up\"")
 args = parser.parse_args()                                                                                              # parameters passed in after flag
 hostList = []
 splitHost = []
@@ -24,13 +25,13 @@ for line in lines:
             for n in range(4, len(splitLine)-4):                                                                        # iterates through index 4 (IP location) to last four indexes
                 portList.append('|' + splitLine[n].split('/')[0])
             IP_PortList.append(splitLine[1] + ''.join(portList))
-            if args.inc:
+            if args.inc == False:
                 if len(''.join(portList).split('|')) < int(args.l):                                                     # writes only hosts not exceeding limit
                     output.write(bytes(line,'utf-8'))
             elif args.ex:
                 if len(''.join(portList).split('|')) > int(args.l):                                                     # writes only hosts exceeding limit
                     output.write(bytes(line, 'utf-8'))
-        else:
+        elif args.noStat == False:
             output.write(bytes(line,'utf-8'))
     else:
         output.write(bytes(line,'utf-8'))
